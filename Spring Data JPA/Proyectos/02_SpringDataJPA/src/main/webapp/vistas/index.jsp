@@ -1,0 +1,92 @@
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+	<h1>PRUEBAS "SPRING_DATA_JPA"</h1>
+	
+					
+	<table border="2">
+	<caption>  <th>DESCRIPCION</th> <th>ID</th> </caption>
+	<!-- DEVUELVE LA LISTA --> 
+	<c:forEach var="ele" items="${fam}">
+	<tr>
+		
+		<td>${ele.descripcion}</td>
+		<td>${ele.idFamilia}</td>
+	
+	</tr>
+	</c:forEach>
+	</table><br><br><br><br>
+	
+	
+	
+	
+	<table border="2">
+	<caption>  <th>DESCRIPCION</th> <th>ID</th> </caption>
+	<tr>
+		
+		<td>${fam2.descripcion}</td>
+		<td>${fam2.idFamilia}</td>
+
+	</tr>
+	</table><br><br><br><br>
+	
+	
+	
+	
+	<form action="/porFamilia" method="post">
+		<input type="number" name="idFamilia" placeholder="Id_Familia">
+		<input type="submit" value="enviar">
+	
+	</form>
+	
+	
+	<table border="2">
+	<caption>  <th>DESCRIPCION</th> <th>ID</th> </caption>
+	<!-- DEVUELVE LA LISTA --> 
+	<c:forEach var="ele" items="${fam3}">
+	<tr>
+		<td>${ele.idProducto}</td>
+		<td>${ele.descripcion}</td>
+		<td>${ele.familia.idFamilia}</td>
+		<td>${ele.precioUnitario}</td>
+	
+	</tr>
+	</c:forEach>
+	</table><br><br><br><br>
+	
+	
+	
+	
+	
+	<form action="/porProducto" method="post">
+		<input type="number" name="idProducto" placeholder="Id_Producto">
+		<input type="submit" value="enviar">
+	
+	</form>
+	
+	
+	<table border="2">
+	<caption>  <th>DESCRIPCION</th> <th>ID</th> </caption>
+	<tr>
+		<td>${fam4.idProducto}</td>
+		<td>${fam4.descripcion}</td>
+		<td>${fam4.familia.idFamilia}</td>
+		<td>${fam4.precioUnitario}</td>
+
+	</tr>
+	</table><br><br><br><br>
+	
+	
+	
+
+</body>
+</html>
